@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Sentinel-2 󠁯•󠁏 Segment Any Change</title>
+  <meta name="description" content="Analisis sensitivitas hyperparameter Segment Any Change">
+  <meta name="keywords" content="Segment Any Change, Hyperparameter, Urban Change Detection">
+  <link href="assets/img/logo_stis.png" rel="icon">
+  <link href="assets/img/logo_stis.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Poppins:wght@300;400;600;700&family=Raleway:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+  <link href="assets/css/mediumish.css" rel="stylesheet">
+</head>
+
+<body class="inner-page">
+
+  <header id="header" class="header d-flex align-items-center fixed-top">
+    <div class="container position-relative d-flex align-items-center justify-content-between">
+
+      <a href="index.html" class="logo d-flex align-items-center me-auto me-xl-0">
+        <img src="assets/img/logo_stis.png" alt="">
+        <div class="logo-text">
+          <h1 class="sitename">Segment Any Change</h1>
+          <small class="text-muted">for Urban Change Detection</small>
+        </div>
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="best_hyperparameter.html">Best Hyperparameter</a></li>
+          <li><a href="sentinel-2.html" class="active">Sentinel-2</a></li>
+          <li><a href="worldview-3.html">WorldView-3</a></li>
+          <li class="dropdown"><a href="demo.html"><span>Demo</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+            <ul>
+              <li><a href="demo.html">Gambar Default</a></li>
+              <li><a href="demo-upload.html">Upload Gambar</a></li>
+            </ul>
+          </li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+
+    </div>
+  </header>
+
+  <main class="main">
+<!-- Begin Article
+================================================== -->
+<div class="container px-5">
+	<div class="row">
+
+		<!-- Begin Post -->
+		<div class="col-md-12 col-md-offset-2 col-xs-12">
+
+			<!-- Begin Post Content -->
+			<div class="article-post">
+				<div class="urban-sensing-fusion" style="padding-top: 2rem;">
+                    <div data-aos="fade-up" data-aos-delay="100">
+					<h1 class="section-title" style="padding-bottom: 0;"><b>Ekstraksi Area Terbangun melalui <span style="color: #e49635;">Indeks Spektral</b></span></h1>
+					<p style="text-align: justify; font-size: 13pt;">
+						Kawasan perkotaan yang kompleks, di mana kepadatan bangunan dan fitur yang bervariasi menjadikan penggunaan citra satelit resolusi menengah untuk pemantauan pertumbuhan perkotaan memiliki keterbatasan (Qian et al., 2020). Untuk mengatasi keterbatasan tersebut, digunakan beberapa indeks spektral yang dalam penelitian Kebede et al. (2022) terbukti mampu merepresentasikan area terbangun.
+					</p>
+                    </div>
+                    </div>
+                    <div data-aos="fade-up" data-aos-delay="100">
+					<h4><b>1. Normalized Built-Up Area Index (NBAI)</b></h4>
+					<div class="image-paragraph-container">
+						<figure>
+							<img src="./assets/img/NBAI.png" style="width: 100%; max-width: 540px; padding: 1rem 1rem 0rem 1.5rem;">
+						</figure>
+
+						<div class="paragraph-side">
+							<p style="text-align: justify; font-size: 12pt;">
+							Indeks ini mampu mendeteksi serta memetakan area terbangun dan tanah terbuka, khususnya membedakan permukaan impervious (seperti beton, atap, jalan) dari pervious (seperti vegetasi atau tanah alami).
+							</p>
+						</div>
+					</div>
+                    </div>
+                    <div data-aos="fade-up" data-aos-delay="100">
+					<h4><b>2. Normalized Difference Built-Up Index (NDBI)</b></h4>
+					<div class="image-paragraph-container">
+						<figure>
+							<img src="./assets/img/NDBI.png" style="width: 100%; max-width: 540px; padding: 1rem 1rem 0rem 1.5rem;">
+						</figure>
+
+						<div class="paragraph-side">
+							<p style="text-align: justify; font-size: 12pt;">
+							Indeks ini mampu mengidentifikasi area terbangun dan memberikan informasi kepadatan bangunan di wilayah perkotaan.
+							</p>
+						</div>
+					</div>
+                    </div>
+                    <div data-aos="fade-up" data-aos-delay="100">
+					<h4><b>3. Built-Up Index (BUI)</b></h4>
+					<div class="image-paragraph-container">
+						<figure>
+							<img src="./assets/img/BUI.png" style="width: 100%; max-width: 540px; padding: 1rem 1rem 0rem 1.5rem;">
+						</figure>
+
+						<div class="paragraph-side">
+							<p style="text-align: justify; font-size: 12pt;">
+							Indeks ini mampu mengidentifikasi dan memetakan area perkotaan atau bangunan dengan mengurangi efek vegetasi yang terdeteksi oleh NDVI dari deteksi area yang dibangun oleh NDBI.
+							</p>
+						</div>
+					</div>
+                    </div>
+                    <div data-aos="fade-up" data-aos-delay="100">
+					<p style="text-align: justify; font-size: 12pt;">Citra diambil dalam bentuk pasangan multitemporal (citra pada waktu t dan t+1) yang kemudian dipilih pada tiga level zoom berbeda seperti pada tabel untuk mengevaluasi pengaruh tingkat detail citra terhadap performa deteksi perubahan.</p>
+
+					<figure style="text-align: center; margin: 1.5rem auto;">
+						<img src="./assets/img/tabelzoom.png" alt="Ilustrasi Pertumbuhan Perkotaan" style="width: 100%; max-width: 350px; display: block; margin: 0 auto;">
+					</figure>
+                    </div>
+				</div>
+
+				<div class="city-introduction" style="padding-top: 1.5rem;" data-aos="fade-up" data-aos-delay="100">
+					<h1 class="section-title"><b><span style="color: #e49635;">Hasil Segmentasi Perubahan Area Terbangun</span> <br> menggunakan Segment Any Change</b></h1>
+
+					<p style="text-align: justify; font-size: 13pt;">
+						Pada eksperimen segmentasi perubahan menggunakan SAC dengan input indeks spektral citra satelit optik resolusi menengah Sentinel-2, dilakukan pengujian terhadap tiga jenis indeks spektral, yaitu NBAI, NDBI, dan BUI dengan tiga level zoom berbeda (level 1, 2, dan 3). 
+					</p>
+ 
+					<figure style="text-align: center; margin: 1.5rem auto;">
+						<img src="./assets/img/hasilsentinel.png" alt="Ilustrasi Pertumbuhan Perkotaan" style="width: 100%;display: block; margin: 0 auto;">
+						<figcaption style="font-size: 12px; color: #555; margin-top: 0.5rem;">
+							Catatan: True Positive ditunjukkan dengan warna putih, True Negative ditunjukkan dengan warna hitam, dan False Positive + False Negative ditunjukkan dengan warna merah.
+						</figcaption>
+					</figure>
+
+					<p style="text-align: justify; font-size: 13pt;">
+						Hasil segmentasi menunjukkan bahwa performa segmentasi sangat dipengaruhi oleh jenis indeks spektral dan resolusi spasial (level zoom) yang digunakan sebagai input. Secara umum, baik NBAI maupun BUI menunjukkan performa yang masih kurang optimal di semua level zoom karena mayoritas prediksi masih didominasi oleh false positive dan false negative. Namun, level zoom 3 untuk NBAI dan BUI memperlihatkan sedikit bagian true positive, yang berarti ada area yang berhasil diidentifikasi secara akurat. Sebaliknya, penggunaan indeks NDBI menunjukkan hasil yang jauh lebih baik dibandingkan dua indeks lainnya. Pada level zoom 2, NDBI menghasilkan segmentasi dengan kualitas paling optimal. 
+					</p>
+					<p style="text-align: justify; font-size: 13pt;">
+						Evaluasi kuantitatif Menggunakan metrik F1-score, IoU, precision, dan recall juga menunjukkan bahwa level zoom 2 dengan input NDBI mencatat nilai tertinggi pada seluruh metrik evaluasi, seperti F1-score sebesar 54%, IoU sebesar 36,99%, dan precision sebesar 66,51%. Sebaliknya, kombinasi lain tidak mampu menghasilkan nilai evaluasi setinggi itu. Hal ini menunjukkan bahwa kombinasi NDBI dengan level zoom 2 memberikan keseimbangan terbaik antara akurasi deteksi perubahan dan jumlah area yang tersegmentasi dengan benar.
+					</p>
+				</div>
+
+				<div class="data-fusion-introduction" style="padding-top: 2rem;" data-aos="fade-up" data-aos-delay="100">
+					<h1 class="section-title" style="padding-bottom: 1.5rem;"><b><span style="color: #e49635;">Estimasi Luas Pertumbuhan Kawasan Perkotaan Jakarta Utara</span> dengan Segment Any Change berbasis NDBI</b></h1>
+
+					<div class="image-paragraph-container">
+						<figure style="text-align: center; margin: 1.5rem auto;">
+						<video autoplay muted loop playsinline style="width: 100%; max-width: 550px; display: block; margin: 0 auto;">
+							<source src="./assets/vid/samplingsentinel.mp4" type="video/mp4">
+							Browser Anda tidak mendukung tag video.
+						</video>
+						</figure>
+
+						<div class="paragraph-side">
+							<p style="text-align: justify; font-size: 13pt;">
+								Estimasi dilakukan dengan metode stratified random sampling, di mana satu sampel grid diambil dari setiap kelurahan untuk mewakili total 31 kelurahan di wilayah tersebut. Hasil estimasi luas pertumbuhan kawasan perkotaan dari model SAC kemudian dibandingkan dengan hasil perhitungan luas area yang berubah dari kategori non-built menjadi built pada peta tutupan lahan Dynamic World V1 dan ESRI Land Cover. 
+							</p>
+						</div>
+					</div>
+
+					<p style="text-align: justify; font-size: 13pt;">
+						Hasil evaluasi menunjukkan bahwa metode Segment Any Change menghasilkan estimasi yang paling akurat, Model ini unggul dalam semua metrik evaluasi estimasi, yaitu MAE (0,2068), MSE (0,3951), RMSE (0,6286), dan R-square (28,38%), Sebaliknya, metode berbasis Dynamic World V1 dan ESRI Land Cover menunjukkan performa yang jauh lebih rendah, bahkan menghasilkan nilai R-square negatif, yang mengindikasikan hubungan yang sangat lemah dengan data aktual (ground truth), Dengan demikian, SAC berbasis NDBI Sentinel-2 terbukti menjadi pendekatan yang lebih andal untuk memetakan dan memprediksi pertumbuhan kawasan perkotaan.
+					</p>
+
+					<figure style="text-align: center; margin: 1.5rem auto;">
+						<img src="./assets/img/estimasisentinel.png" alt="Kategori Resolusi Spasial" style="width: 100%; max-width: 450px; display: block; margin: 0 auto;">
+					</figure>
+				</div>
+
+				
+			</div>
+			<!-- End Post Content -->
+
+		</div>
+		<!-- End Post -->
+
+	</div>
+</div>
+<!-- End Article
+================================================== -->
+  </main>
+
+  <footer id="footer" class="footer light-background">
+    <div class="container">
+      <div class="row gy-3 justify-content-center text-center">
+        <div class="col-auto">
+          <h4>Naufal Fadli Muzakki</h4>
+          <div class="social-links d-flex justify-content-center">
+            <a href="#" class="github"><i class="bi bi-github"></i></a>
+            <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+            <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container copyright text-center mt-4">
+      <span>© <span>Copyright</span> <strong class="px-1 sitename">Urban Segment Any Change</strong> <span>All Rights Reserved</span></span>
+      <div class="credits">
+        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+      </div>
+    </div>
+  </footer>
+
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+
+</html>

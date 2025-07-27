@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Demo 󠁯•󠁏 Segment Any Change</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+  <!-- Favicons -->
+  <link href="assets/img/logo_stis.png" rel="icon">
+  <link href="assets/img/logo_stis.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: Consulting
+  * Template URL: https://bootstrapmade.com/bootstrap-consulting-website-template/
+  * Updated: May 01 2025 with Bootstrap v5.3.5
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body class="index-page">
+
+  <header id="header" class="header d-flex align-items-center fixed-top">
+    <div class="container position-relative d-flex align-items-center justify-content-between">
+
+      <a href="index.html" class="logo d-flex align-items-center me-auto me-xl-0">
+        <!-- Uncomment the line below if you also wish to use an image logo -->
+        <img src="assets/img/logo_stis.png" alt="">
+        <div class="logo-text">
+          <h1 class="sitename">Segment Any Change</h1>
+          <small class="text-muted">for Urban Change Detection</small>
+        </div>
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="best_hyperparameter.html">Best Hyperparameter</a></li>
+          <li><a href="sentinel-2.html">Sentinel-2</a></li>
+          <li><a href="worldview-3.html">WorldView-3</a></li>
+          <li class="dropdown"><a href="demo.html" class="active"><span>Demo</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+            <ul>
+              <li><a href="demo.html">Gambar Default</a></li>
+              <li><a href="demo-upload.html">Upload Gambar</a></li>
+            </ul>
+          </li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+
+      <!-- <a class="btn-getstarted" href="#consultation">Get Started</a> -->
+
+    </div>
+  </header>
+
+  <main class="main">
+    <!-- Prediction Section -->
+    <section id="prediction" class="prediction section light-background" data-aos="fade-up" data-aos-delay="100">
+      <div class="container">
+        <div class="row">
+          <!-- KIRI: Galeri -->
+          <div class="col-lg-5">
+            <div class="gallery-card">
+              <h3>Galeri Citra Satelit Bitemporal</h3>
+              <p>Pilih pasangan citra dari galeri atau <a href="demo-upload.html" style="color: blue;">upload citra</a></p>
+              <div class="gallery-scroll">
+                <div class="image-pair" data-id="pair1" onclick="selectPair(this)">
+                  <div class="pair-location"><i class="bi bi-geo-alt-fill"></i>Kawasan PIK, Jakarta Utara</div>
+                  <div class="pair-images">
+                    <div class="image-with-caption">
+                      <img src="assets/img/galeri/pair1_t0.jpg" alt="Citra t0">
+                      <div class="image-caption">Citra t</div>
+                    </div>
+                    <div class="image-with-caption">
+                      <img src="assets/img/galeri/pair1_t1.jpg" alt="Citra t1">
+                      <div class="image-caption">Citra t+1</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="image-pair" data-id="pair2" onclick="selectPair(this)">
+                  <div class="pair-location"><i class="bi bi-geo-alt-fill"></i>Kawasan PIK, Jakarta Utara</div>
+                  <div class="pair-images">
+                    <div class="image-with-caption">
+                      <img src="assets/img/galeri/pair2_t0.png" alt="Citra t0">
+                      <div class="image-caption">Citra t</div>
+                    </div>
+                    <div class="image-with-caption">
+                      <img src="assets/img/galeri/pair2_t1.png" alt="Citra t1">
+                      <div class="image-caption">Citra t+1</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="image-pair" data-id="pair3" onclick="selectPair(this)">
+                  <div class="pair-location"><i class="bi bi-geo-alt-fill"></i>Cilincing, Jakarta Utara</div>
+                  <div class="pair-images">
+                    <div class="image-with-caption">
+                      <img src="assets/img/galeri/pair3_t0.jpg" alt="Citra t0">
+                      <div class="image-caption">Citra t</div>
+                    </div>
+                    <div class="image-with-caption">
+                      <img src="assets/img/galeri/pair3_t1.jpg" alt="Citra t1">
+                      <div class="image-caption">Citra t+1</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="image-pair" data-id="pair4" onclick="selectPair(this)">
+                  <div class="pair-location"><i class="bi bi-geo-alt-fill"></i>Cilincing, Jakarta Utara</div>
+                  <div class="pair-images">
+                    <div class="image-with-caption">
+                      <img src="assets/img/galeri/pair4_t0.png" alt="Citra t0">
+                      <div class="image-caption">Citra t</div>
+                    </div>
+                    <div class="image-with-caption">
+                      <img src="assets/img/galeri/pair4_t1.png" alt="Citra t1">
+                      <div class="image-caption">Citra t+1</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="image-pair" data-id="pair5" onclick="selectPair(this)">
+                  <div class="pair-location"><i class="bi bi-geo-alt-fill"></i>Kapuk Muara, Jakarta Utara</div>
+                  <div class="pair-images">
+                    <div class="image-with-caption">
+                      <img src="assets/img/galeri/pair5_t0.jpg" alt="Citra t0">
+                      <div class="image-caption">Citra t</div>
+                    </div>
+                    <div class="image-with-caption">
+                      <img src="assets/img/galeri/pair5_t1.jpg" alt="Citra t1">
+                      <div class="image-caption">Citra t+1</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="image-pair" data-id="pair6" onclick="selectPair(this)">
+                  <div class="pair-location"><i class="bi bi-geo-alt-fill"></i>Kapuk Muara, Jakarta Utara</div>
+                  <div class="pair-images">
+                    <div class="image-with-caption">
+                      <img src="assets/img/galeri/pair6_t0.png" alt="Citra t0">
+                      <div class="image-caption">Citra t</div>
+                    </div>
+                    <div class="image-with-caption">
+                      <img src="assets/img/galeri/pair6_t1.png" alt="Citra t1">
+                      <div class="image-caption">Citra t+1</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="image-pair" data-id="pair7" onclick="selectPair(this)">
+                  <div class="pair-location"><i class="bi bi-geo-alt-fill"></i>Rorotan, Jakarta Utara</div>
+                  <div class="pair-images">
+                    <div class="image-with-caption">
+                      <img src="assets/img/galeri/pair7_t0.jpg" alt="Citra t0">
+                      <div class="image-caption">Citra t</div>
+                    </div>
+                    <div class="image-with-caption">
+                      <img src="assets/img/galeri/pair7_t1.jpg" alt="Citra t1">
+                      <div class="image-caption">Citra t+1</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="image-pair" data-id="pair8" onclick="selectPair(this)">
+                  <div class="pair-location"><i class="bi bi-geo-alt-fill"></i>Rorotan, Jakarta Utara</div>
+                  <div class="pair-images">
+                    <div class="image-with-caption">
+                      <img src="assets/img/galeri/pair8_t0.png" alt="Citra t0">
+                      <div class="image-caption">Citra t</div>
+                    </div>
+                    <div class="image-with-caption">
+                      <img src="assets/img/galeri/pair8_t1.png" alt="Citra t1">
+                      <div class="image-caption">Citra t+1</div>
+                    </div>
+                  </div>
+                </div>
+                
+                <!-- Tambahkan pasangan lain jika perlu -->
+              </div>
+            </div>
+          </div>
+
+          <!-- KANAN: Preview + Form -->
+          <div class="col-lg-7">
+            <div class="prediction-form-wrapper two-column-vertical">
+              <!-- Input -->
+              <div class="input-section">
+                <h3>Input</h3>
+                <div id="inputContent" class="input-content">
+                  <i class="bi bi-image" style="font-size: 1.5rem;"></i>
+                  <p class="placeholder-text">Gambar belum dipilih</p>
+                </div>
+                <div class="text-center" style="margin-top: 0.8rem;">
+                  <button type="button" class="btn btn-primary" onclick="predict()">Estimasi Perubahan</button>
+                </div>
+              </div>
+
+              <!-- Output -->
+              <div class="output-section" id="output">
+                <h3>Output</h3>
+                <div id="outputContent" class="output-content">
+                  <i class="bi bi-file-earmark" style="font-size: 1.5rem;"></i>
+                  <p class="placeholder-text">Output belum tersedia</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
+  </main>
+
+  
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+  <script>
+  let selectedPairId = null;
+
+  function selectPair(element) {
+    selectedPairId = element.getAttribute("data-id"); // Simpan ID pasangan
+
+    const imgT0 = element.querySelectorAll('.image-with-caption img')[0].src;
+    const imgT1 = element.querySelectorAll('.image-with-caption img')[1].src;
+
+    document.getElementById('inputContent').innerHTML = `
+      <div class="input-selected-info">
+        <div class="selected-pair">
+          <div class="image-with-caption">
+            <div class="image-caption">Citra t</div>
+            <img src="${imgT0}" alt="Citra t0">
+          </div>
+          <div class="image-with-caption">
+            <div class="image-caption">Citra t+1</div>
+            <img src="${imgT1}" alt="Citra t1">
+          </div>
+        </div>
+      </div>
+    `;
+
+    const outputContent = document.getElementById('outputContent');
+    outputContent.innerHTML = `
+      <i class="bi bi-file-earmark" style="font-size: 1.5rem;"></i>
+      <p class="placeholder-text">Output belum tersedia</p>
+    `;
+
+    document.querySelectorAll('.image-pair').forEach(pair => pair.classList.remove('active'));
+    element.classList.add('active');
+  }
+
+  function predict() {
+    const outputContent = document.getElementById('outputContent');
+    const placeholder = inputContent.querySelector('.placeholder-text');
+
+    if (placeholder) {
+      alert('Silakan pilih gambar terlebih dahulu sebelum memulai estimasi.');
+      return;
+    }
+
+    // Loading spinner
+    outputContent.innerHTML = `
+      <div class="spinner"></div>
+      <p class="placeholder-text">Memproses estimasi perubahan...</p>
+    `;
+
+    // Data output berdasarkan pair yang dipilih
+    const outputMap = {
+      "pair1": { mask: "assets/img/galeri/output_pair1.png", area: "1,99 hektar" },
+      "pair2": { mask: "assets/img/galeri/output_pair2.png", area: "2,18 hektar" },
+      "pair3": { mask: "assets/img/galeri/output_pair3.png", area: "0,48 hektar" },
+      "pair4": { mask: "assets/img/galeri/output_pair4.png", area: "2,53 hektar" },
+      "pair5": { mask: "assets/img/galeri/output_pair5.png", area: "0,24 hektar" },
+      "pair6": { mask: "assets/img/galeri/output_pair6.png", area: "9,22 hektar" },
+      "pair7": { mask: "assets/img/galeri/output_pair7.png", area: "0,66 hektar" },
+      "pair8": { mask: "assets/img/galeri/output_pair8.png", area: "2,98 hektar" }
+    };
+
+    setTimeout(() => {
+      if (selectedPairId && outputMap[selectedPairId]) {
+        const result = outputMap[selectedPairId];
+        outputContent.innerHTML = `
+          <div class="output-images mb-2 text-center">
+            <img id="outputMask" src="${result.mask}" alt="Change Mask" style="max-width: 100%; height: auto;">
+          </div>
+          <p class="text-center">Estimasi luas perubahan: ${result.area}</p>
+        `;
+      } else {
+        outputContent.innerHTML = `<p class="text-danger">Output tidak tersedia untuk pasangan ini.</p>`;
+      }
+    }, 2000);
+  }
+
+  </script>
+
+  <style>
+    .spinner {
+      border: 6px solid #f3f3f3;
+      border-top: 6px solid #e49635;
+      border-radius: 50%;
+      width: 36px;
+      height: 36px;
+      animation: spin 1s linear infinite;
+      margin: 16px auto;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    .placeholder-text {
+      text-align: center;
+      color: #777;
+      font-style: italic;
+    }
+  </style>
+
+
+</body>
+
+</html>

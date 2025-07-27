@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Demo 󠁯•󠁏 Segment Any Change</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+  <!-- Favicons -->
+  <link href="assets/img/logo_stis.png" rel="icon">
+  <link href="assets/img/logo_stis.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+  <script src="https://unpkg.com/geotiff@1.0.0-beta.10/dist/geotiff.browser.min.js"></script>
+
+  <!-- =======================================================
+  * Template Name: Consulting
+  * Template URL: https://bootstrapmade.com/bootstrap-consulting-website-template/
+  * Updated: May 01 2025 with Bootstrap v5.3.5
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body class="index-page">
+
+  <header id="header" class="header d-flex align-items-center fixed-top">
+    <div class="container position-relative d-flex align-items-center justify-content-between">
+
+      <a href="index.html" class="logo d-flex align-items-center me-auto me-xl-0">
+        <!-- Uncomment the line below if you also wish to use an image logo -->
+        <img src="assets/img/logo_stis.png" alt="">
+        <div class="logo-text">
+          <h1 class="sitename">Segment Any Change</h1>
+          <small class="text-muted">for Urban Change Detection</small>
+        </div>
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="best_hyperparameter.html">Best Hyperparameter</a></li>
+          <li><a href="sentinel-2.html">Sentinel-2</a></li>
+          <li><a href="worldview-3.html">WorldView-3</a></li>
+          <li class="dropdown"><a href="demo.html" class="active"><span>Demo</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+            <ul>
+              <li><a href="demo.html">Gambar Default</a></li>
+              <li><a href="demo-upload.html">Upload Gambar</a></li>
+            </ul>
+          </li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+
+      <!-- <a class="btn-getstarted" href="#consultation">Get Started</a> -->
+
+    </div>
+  </header>
+
+  <main class="main">
+    <!-- Prediction Section -->
+    <section id="prediction" class="prediction section light-background" data-aos="fade-up" data-aos-delay="100">
+      <div class="container">
+        <div class="row">
+          <!-- KIRI: Galeri -->
+          <div class="col-lg-5">
+            <div class="gallery-card">
+              <h3>Upload Citra Satelit Bitemporal</h3>
+              <p>Unggah citra anda atau pilih dari <a href="demo.html" style="color: blue;">galeri</a></p>
+
+              <form id="uploadForm">
+                <div class="mb-3">
+                  <label for="imageT0" class="form-label" style="font-weight: 600; color: #e49635;">Citra t (sebelum)</label>
+                  <input class="form-control" type="file" id="imageT0" accept=".jpg,.jpeg,.png,.tif,.tiff" onchange="previewImage('t0')">
+                </div>
+                <div class="mb-3">
+                  <label for="imageT1" class="form-label" style="font-weight: 600; color:#e49635">Citra t+1 (sesudah)</label>
+                  <input class="form-control" type="file" id="imageT1" accept=".jpg,.jpeg,.png,.tif,.tiff" onchange="previewImage('t1')">
+                </div>
+              </form>
+
+              <div class="image-requirements mt-4">
+                <h6>📌 Syarat dan Ketentuan:</h6>
+                <ul class="requirement-list">
+                  <li>Pasangan citra harus dalam rasio 1:1 dengan resolusi (ukuran piksel) yang sama</li>
+                  <li>Pasangan citra diambil pada titik/lokasi yang sama</li>
+                  <li>Format citra yang digunakan: .jpg, .png, .tif, atau .tiff</li>
+                  <li>Jika anda memilih jenis output estimasi "changemask + luas perubahan" maka harus mengisi ukuran (satu sisi) citra dalam satuan meter</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          
+          <!-- KANAN: Preview + Form -->
+          <div class="col-lg-7">
+            <div class="prediction-form-wrapper two-column-vertical">
+              
+              <!-- Input -->
+              <div class="input-section">
+                <h3>Input</h3>
+                
+                <div class="row" style="height: 100%;">
+                  <!-- KIRI: Preview Gambar -->
+                  <div class="col-md-6">
+                    <div id="inputContent" class="input-content">
+                      <i class="bi-box-arrow-up" style="font-size: 1.5rem;"></i>
+                      <p class="placeholder-text">Gambar belum diupload</p>
+                    </div>
+                  </div>
+
+                  <!-- KANAN: Form -->
+                  <div class="col-md-6">
+                    <form id="predictionForm" onsubmit="event.preventDefault(); predict();">
+                      <div class="mb-3">
+                        <label for="modeSelect" class="form-label">Output Estimasi</label>
+                        <select class="form-select" id="modeSelect" required>
+                          <option value="mask">Change Mask</option>
+                          <option value="mask_luas">Change Mask + Luas Perubahan</option>
+                        </select>
+                      </div>
+
+                      <div class="mb-3" id="pixelSizeGroup">
+                        <label for="resolutionInput" class="form-label">Ukuran Gambar (meter)</label>
+                        <input type="text" class="form-control" id="resolutionInput" placeholder="Contoh: 310" required>
+                      </div>
+
+                      <div class="text-center">
+                        <button type="submit" class="btn btn-primary">Estimasi Perubahan</button>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Output -->
+              <div class="output-section" id="output">
+                <h3>Output</h3>
+                <div id="outputContent" class="output-content">
+                  <i class="bi bi-file-earmark" style="font-size: 1.5rem;"></i>
+                  <p class="placeholder-text">Output belum tersedia</p>
+                </div>
+              </div>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
+  </main>
+
+  
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+  <script>
+  const images = { t0: null, t1: null };
+  let fileFormats = { t0: null, t1: null };
+  const imageDimensions = { t0: null, t1: null };
+
+
+  function previewImage(which) {
+    const input = document.getElementById(`image${which.toUpperCase()}`);
+    const file = input.files[0];
+    if (!file) return;
+
+    const fileName = file.name.toLowerCase();
+    const isImage = /\.(jpe?g|png|webp)$/i.test(fileName);
+    const isTiff = /\.(tif|tiff)$/i.test(fileName);
+
+    const ext = fileName.split('.').pop(); // ambil ekstensi
+
+    // Simpan format
+    fileFormats[which] = ext;
+
+    // Cek jika kedua format sudah ada dan beda
+    if (fileFormats.t0 && fileFormats.t1 && fileFormats.t0 !== fileFormats.t1) {
+      alert(`Format file tidak sama:\n- Citra t: .${fileFormats.t0}\n- Citra t+1: .${fileFormats.t1}\n\nSilakan unggah dua gambar dengan format yang sama.`);
+      // Reset input yang baru diisi
+      input.value = "";
+      images[which] = null;
+      fileFormats[which] = null;
+      updateInputPreview();
+      return;
+    }
+
+    if (isTiff) {
+      images[which] = "TIFF";
+      updateInputPreview();
+      return;
+    }
+
+    if (isImage) {
+      const img = new Image();
+      img.onload = function () {
+        const width = img.width;
+        const height = img.height;
+
+        // Pastikan rasio 1:1
+        if (width !== height) {
+          alert(`Rasio gambar harus 1:1 (persegi).\nUkuran saat ini: ${width}x${height}`);
+          input.value = "";
+          images[which] = null;
+          imageDimensions[which] = null;
+          fileFormats[which] = null;
+          return;
+        }
+
+        imageDimensions[which] = { width, height };
+
+        // Jika kedua gambar sudah tersedia, cek apakah ukurannya sama
+        const dimT0 = imageDimensions.t0;
+        const dimT1 = imageDimensions.t1;
+
+        if (dimT0 && dimT1 && (dimT0.width !== dimT1.width || dimT0.height !== dimT1.height)) {
+          alert(`Ukuran gambar tidak sama:\n- Citra t: ${dimT0.width}x${dimT0.height}\n- Citra t+1: ${dimT1.width}x${dimT1.height}\n\nSilakan unggah dua gambar dengan ukuran yang sama.`);
+          input.value = "";
+          images[which] = null;
+          imageDimensions[which] = null;
+          fileFormats[which] = null;
+          updateInputPreview();
+          return;
+        }
+
+        // Jika aman, tampilkan preview
+        const reader = new FileReader();
+        reader.onload = function (e) {
+          images[which] = e.target.result;
+          updateInputPreview();
+        };
+        reader.readAsDataURL(file);
+      };
+      img.src = URL.createObjectURL(file);
+    }
+  }
+
+  function updateInputPreview() {
+    const inputContent = document.getElementById('inputContent');
+
+    let previewHTML = `<div class="input-selected-info"><div class="selected-pair">`;
+
+    let hasTiff = false;
+
+    // --- Citra t ---
+    if (images.t0 && images.t0 !== "TIFF") {
+      previewHTML += `
+        <div class="image-with-caption">
+          <div class="image-caption">Citra t</div>
+          <img src="${images.t0}" alt="Citra t">
+        </div>
+      `;
+    } else if (images.t0 === "TIFF") {
+      hasTiff = true;
+      previewHTML += `
+        <div class="image-with-caption">
+          <div class="image-caption">Citra t (.tif)</div>
+          <i class="bi bi-file-earmark-image" style="font-size: 2rem; color: #777;"></i>
+        </div>
+      `;
+    }
+
+    // --- Citra t+1 ---
+    if (images.t1 && images.t1 !== "TIFF") {
+      previewHTML += `
+        <div class="image-with-caption">
+          <div class="image-caption">Citra t+1</div>
+          <img src="${images.t1}" alt="Citra t+1">
+        </div>
+      `;
+    } else if (images.t1 === "TIFF") {
+      hasTiff = true;
+      previewHTML += `
+        <div class="image-with-caption">
+          <div class="image-caption">Citra t+1 (.tif)</div>
+          <i class="bi bi-file-earmark-image" style="font-size: 2rem; color: #777;"></i>
+        </div>
+      `;
+    }
+
+    previewHTML += `</div>`; // end .selected-pair
+
+    // --- Keterangan TIFF (jika ada) ---
+    if (hasTiff) {
+      previewHTML += `
+        <div class="tif-note">
+          <i class="bi bi-info-circle-fill" style="margin-right: 4px;"></i>
+          File <code>.tif</code> tidak dapat ditampilkan di halaman,
+          namun tetap bisa diproses oleh model.
+        </div>
+      `;
+    }
+
+    previewHTML += `</div>`; // end .input-selected-info
+
+    inputContent.innerHTML = previewHTML;
+
+    // Reset output
+    const outputContent = document.getElementById('outputContent');
+    outputContent.innerHTML = `
+      <i class="bi bi-file-earmark" style="font-size: 1.5rem;"></i>
+      <p class="placeholder-text">Output belum tersedia</p>
+    `;
+  }
+
+
+  const modeSelect = document.getElementById("modeSelect");
+  const pixelSizeGroup = document.getElementById("pixelSizeGroup");
+  const resolutionInput = document.getElementById("resolutionInput");
+
+  function togglePixelInput() {
+    if (modeSelect.value === "mask_luas") {
+      pixelSizeGroup.style.display = "block";
+      resolutionInput.required = true;
+    } else {
+      pixelSizeGroup.style.display = "none";
+      resolutionInput.required = false;
+    }
+  }
+
+  // Event listener
+  modeSelect.addEventListener("change", togglePixelInput);
+
+  // Jalankan saat pertama kali halaman dibuka
+  document.addEventListener("DOMContentLoaded", togglePixelInput);
+
+  
+  async function predict() {
+    const outputContent = document.getElementById('outputContent');
+
+    // Cek apakah kedua gambar sudah diupload
+    if (!images.t0 || !images.t1) {
+      alert("Silakan upload kedua gambar terlebih dahulu.");
+      return;
+    }
+
+    // Ambil input file
+    const fileT0 = document.getElementById('imageT0').files[0];
+    const fileT1 = document.getElementById('imageT1').files[0];
+    const mode = document.getElementById('modeSelect').value;
+    const resolution = document.getElementById('resolutionInput').value;
+
+    // Tampilkan spinner
+    outputContent.innerHTML = `
+      <div class="spinner"></div>
+      <p class="placeholder-text">Memproses estimasi perubahan...</p>
+    `;
+
+    // Buat FormData
+    const formData = new FormData();
+    formData.append('image_t0', fileT0);
+    formData.append('image_t1', fileT1);
+    formData.append('mode', mode);
+    if (mode === "mask_luas") {
+      formData.append('resolution', resolution);
+    }
+
+    try {
+      const response = await fetch('https://nfmuzakki-urban-sac.hf.space/predict', {
+        method: 'POST',
+        body: formData
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        // Tampilkan hasil
+        let html = `
+          <div class="output-images text-center">
+            <img id="outputMask" src="data:image/png;base64,${data.mask_image}" alt="Change Mask" style="max-width: 100%; height: auto;">
+          </div>
+        `;
+
+        if (mode === "mask_luas") {
+          html += `<p class="text-center">Estimasi luas perubahan: ${Math.round(data.luas)} hektar</p>`;
+        }
+
+        outputContent.innerHTML = html;
+      } else {
+        outputContent.innerHTML = `<p class="placeholder-text text-danger">Error: ${data.error}</p>`;
+      }
+    } catch (error) {
+      console.error(error);
+      outputContent.innerHTML = 
+      `<p class="placeholder-text text-danger">
+          <i class="bi bi-exclamation-triangle-fill"></i> Terjadi kesalahan saat memproses estimasi
+       </p>`;
+    }
+  }
+
+
+  </script>
+
+  <style>
+    .spinner {
+      border: 6px solid #f3f3f3;
+      border-top: 6px solid #e49635;
+      border-radius: 50%;
+      width: 36px;
+      height: 36px;
+      animation: spin 1s linear infinite;
+      margin: 16px auto;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    .placeholder-text {
+      text-align: center;
+      color: #777;
+      font-style: italic;
+    }
+  </style>
+
+
+</body>
+
+</html>
